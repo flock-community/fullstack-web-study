@@ -17,9 +17,6 @@
     "prettier": "^3.1.0"
   },
   "prettier": {
-    "printWidth": 100,
-    "singleQuote": false,
-    "arrowParens": "always",
-    "trailingComma": "all"
+    "printWidth": 100
   }
 }
