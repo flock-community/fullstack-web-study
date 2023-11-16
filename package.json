@@ -1,0 +1,30 @@
+{
+  "name": "fullstack-web-study",
+  "author": "Flock.Community",
+  "version": "1.0.0",
+  "description": "Full stack web application architectures, a comparative study",
+  "keywords": [
+    "htmx",
+    "koajs",
+    "nextjs",
+    "full-stack",
+    "web"
+  ],
+  "private": true,
+  "license": "MIT",
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/flock-community/fullstack-web-study.git"
+  },
+  "bugs": {
+    "url": "https://github.com/flock-community/fullstack-web-study/issues"
+  },
+  "homepage": "https://github.com/flock-community/fullstack-web-study#readme"
+}
