@@ -1,7 +1,7 @@
 {
   "name": "koa-htmx",
-  "description": "",
-  "version": "0.0.0",
+  "description": "microblogging platform build with KoaJS and Htmx following the hypermedia stack",
+  "version": "0.0.1",
   "private": true,
   "author": "tkgroot",
   "main": "index.js",
