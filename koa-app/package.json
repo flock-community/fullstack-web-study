@@ -12,7 +12,10 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "koa": "^2.14.2"
+    "@koa/router": "^12.0.1",
+    "koa": "^2.14.2",
+    "koa-views": "^8.1.0",
+    "pug": "^3.0.2"
   },
   "devDependencies": {
     "prettier": "^3.1.0"
