@@ -1,4 +1,4 @@
-import { getPosts } from "../../db";
+import { getPosts } from "../../../db";
 
 export default async function Posts() {
   const posts = await getPosts();
