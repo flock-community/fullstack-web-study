@@ -1,1 +1,11 @@
+# node
 **/node_modules/
+
+# databases
+**/db.json
+
+# build directories
+**/dist
+
+# environment variables
+**/.env
