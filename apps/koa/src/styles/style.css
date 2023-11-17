@@ -1,7 +1,18 @@
 :root {
 }
 
-body {
-  background: #333;
-  color: #fff;
+.flex {
+  display: flex;
+}
+
+.row {
+  flex-flow: row nowrap;
+}
+
+.column {
+  flex-flow: column nowrap;
+}
+
+.content-between {
+  justify-content: space-between;
 }

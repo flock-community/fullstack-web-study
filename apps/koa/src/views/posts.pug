@@ -1,5 +1,17 @@
-ul
-  each post in posts
-    li= post.message
-  else
-    li database is currently empty
+each post in posts
+  article.flex.column
+    header
+      .grid
+        div
+          span Likes
+          if post.likes
+            span= post.likes
+          else
+            span= 0
+        button(type="button", hx-post="/likes/" + post.id, hx-target="#posts-results") Like me
+        button(type="button", hx-delete="/posts/" + post.id, hx-target="#posts-results") Delete me
+
+    p= post.message
+    footer Some footer
+  //- else
+  //-   li database is currently empty
