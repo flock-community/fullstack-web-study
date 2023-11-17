@@ -21,7 +21,7 @@ const create = async ({ body, request, response, render }: any) => {
   const post = request.body.post ?? "no content";
 
   await createPost(post);
-  await render("post", { posts: await getPosts() });
+  await render("posts", { posts: await getPosts() });
 };
 
 router.get("/", root).post("/posts", create);

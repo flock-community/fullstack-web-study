@@ -6,12 +6,14 @@ html(lang="en")
     title Document
     style
       include ../styles/style.css
+    script( src="https://unpkg.com/htmx.org@1.9.8" integrity="sha384-rgjA7mptc2ETQqXoYC3/zJvkU7K/aP44Y+z7xQuJiVnB/422P/Ak+F/AqFR7E4Wr" crossorigin="anonymous")
+
   body
     h1 Posts
 
-    form(action="/posts", method="POST")
+    form(hx-post="/posts" hx-target="#posts-results", enctype="multipart/form-data", hx-swap="afterbegin")
       input(type="text", name="post")
       button(type="submit") Submit
-    ul
-      each val in posts
-        li=val
+
+    #posts-results
+      include posts

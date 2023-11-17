@@ -5,5 +5,5 @@ export interface Post {
 }
 
 export interface Posts {
-  list: Post[];
+  list: string[];
 }
