@@ -21,3 +21,9 @@ export async function deletePost(id: string) {
   list = list.filter((post) => post.id !== id);
   await db.write();
 }
+
+export async function likePost(id: string) {
+  const postToUpdate = list.find((post) => post.id === id);
+  if (postToUpdate) postToUpdate.likes++;
+  await db.write();
+}

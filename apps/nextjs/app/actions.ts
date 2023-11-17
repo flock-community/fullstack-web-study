@@ -1,6 +1,6 @@
 "use server";
 
-import { createPost, deletePost } from "js-app-db";
+import { createPost, deletePost, likePost } from "js-app-db";
 import { revalidatePath } from "next/cache";
 
 export async function createPostAction(formData: FormData) {
@@ -14,5 +14,12 @@ export async function deletePostAction(formData: FormData) {
   const id = formData.get("id") as string;
 
   await deletePost(id);
+  revalidatePath("/");
+}
+
+export async function likePostAction(formData: FormData) {
+  const id = formData.get("id") as string;
+
+  await likePost(id);
   revalidatePath("/");
 }
