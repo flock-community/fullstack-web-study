@@ -7,6 +7,6 @@ const defaultData: Posts = { list: [] };
 
 // @ts-ignore
 export const db = await JSONPreset<Posts>(
-  path.resolve(process.cwd(), "db.json"),
+  path.resolve('../../packages/db', "db.json"),
   defaultData,
 );
