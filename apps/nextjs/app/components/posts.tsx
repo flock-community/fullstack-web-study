@@ -7,7 +7,7 @@ export default async function Posts() {
   return (
     <ul>
       {posts.map((post) => (
-        <li key={post.id}>
+        <li key={post.id} style={{ display: "flex", gap: "8px" }}>
           <span>{post.message}</span>
           <PostDeleteButton id={post.id} />
         </li>
