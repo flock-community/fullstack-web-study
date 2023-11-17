@@ -20,7 +20,7 @@ const root = async (ctx: any) => {
 const create = async ({ body, request, response, render }: any) => {
   const post = request.body.post ?? "no content";
 
-  await createPost(post);
+  await createPost({ message: post });
   await render("posts", { posts: await getPosts() });
 };
 
