@@ -12,6 +12,9 @@
     }
   },
   "scripts": {
+    "clear:db": "rm db.json",
+    "preinit:db": "npm run clear:db",
+    "init:db": "NODE_OPTIONS=\"--loader ts-node/esm\" ts-node init.ts",
     "start": "tsc"
   },
   "dependencies": {
