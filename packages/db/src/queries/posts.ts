@@ -1,5 +1,6 @@
 import { db } from "../../db.js";
 import type { Post } from "../models/posts.js";
+import { v4 as uuid } from "uuid";
 import "dotenv/config";
 
 const { list } = db?.data;
@@ -11,7 +12,7 @@ export async function getPosts() {
   return list;
 }
 
-export async function createPost(post: Post) {
-  list.push(post);
+export async function createPost(post: Omit<Post, "id" | "likes">) {
+  list.push({ ...post, id: uuid(), likes: 0 });
   await db.write();
 }

@@ -6,7 +6,7 @@ export default async function Posts() {
   return (
     <ul>
       {posts.map((post) => (
-        <li key={post}>{post}</li>
+        <li key={post.id}>{post.message}</li>
       ))}
     </ul>
   );

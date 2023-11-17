@@ -6,6 +6,6 @@ import { revalidatePath } from "next/cache";
 export async function createPostAction(formData: FormData) {
   const post = formData.get("post") as string;
 
-  await createPost(post);
+  await createPost({ message: post });
   revalidatePath("/");
 }

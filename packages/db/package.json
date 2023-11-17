@@ -21,16 +21,18 @@
     "dev": "nodemon -w src --ext ts --exec npm start",
     "preinit:db": "npm run clear:db",
     "init:db": "NODE_OPTIONS=\"--loader ts-node/esm\" ts-node init.ts",
-    "postinstall":"cp .env.example .env",
+    "postinstall": "cp .env.example .env",
     "start": "tsc"
   },
   "dependencies": {
-    "lowdb": "^6.1.1"
+    "lowdb": "^6.1.1",
+    "uuid": "^9.0.1"
   },
   "prettier": {
     "printWidth": 100
   },
   "devDependencies": {
+    "@types/uuid": "^9.0.7",
     "dotenv": "^16.3.1"
   }
 }
