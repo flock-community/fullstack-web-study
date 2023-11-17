@@ -1,3 +1,5 @@
 ul
-  each val in posts
-    li=val
+  each post in posts
+    li= post.message
+  else
+    li database is currently empty
