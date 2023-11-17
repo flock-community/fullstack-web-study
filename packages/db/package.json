@@ -1,5 +1,23 @@
 {
+  "name": "js-app-db",
+  "description": "database for the different javascript powered apps",
+  "version": "0.0.1",
+  "main": "dist/index.js",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": {
+        "default": "./dist/index.d.ts"
+      }
+    }
+  },
+  "scripts": {
+    "start": "tsc"
+  },
   "dependencies": {
     "lowdb": "^6.1.1"
+  },
+  "prettier": {
+    "printWidth": 100
   }
 }
