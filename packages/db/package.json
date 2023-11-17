@@ -8,13 +8,20 @@
     ".": {
       "types": {
         "default": "./dist/index.d.ts"
-      }
+      },
+      "import": {
+        "default": "./dist/index.js"
+      },
+      "default": "./dist/index.js"
     }
   },
   "scripts": {
+    "build": "npm start",
     "clear:db": "rm db.json",
+    "dev": "nodemon -w src --ext ts --exec npm start",
     "preinit:db": "npm run clear:db",
     "init:db": "NODE_OPTIONS=\"--loader ts-node/esm\" ts-node init.ts",
+    "postinstall":"cp .env.example .env",
     "start": "tsc"
   },
   "dependencies": {
