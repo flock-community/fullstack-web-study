@@ -1,0 +1,17 @@
+doctype html5
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    title Document
+    style
+      include ../styles/style.css
+  body
+    h1 Posts
+
+    form(action="/posts", method="POST")
+      input(type="text", name="post")
+      button(type="submit") Submit
+    ul
+      each val in posts
+        li=val
