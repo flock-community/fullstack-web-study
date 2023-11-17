@@ -11,7 +11,7 @@ html(lang="en")
   body
     h1 Posts
 
-    form(hx-post="/posts" hx-target="#posts-results", enctype="multipart/form-data", hx-swap="afterbegin")
+    form(hx-post="/posts" hx-target="#posts-results", enctype="multipart/form-data", hx-swap="innerHTML")
       input(type="text", name="post")
       button(type="submit") Submit
 
