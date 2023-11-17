@@ -1,7 +1,9 @@
 import { db } from "../../db.js";
 import type { Post } from "../models/posts.js";
+import "dotenv/config";
 
-const { list } = db.data;
+const { list } = db?.data;
+const timeout = Number(process.env.TIMEOUT) ?? 0;
 
 export async function getPosts() {
   // Artificial delay to simulate network latency
