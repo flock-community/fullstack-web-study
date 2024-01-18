@@ -11,7 +11,11 @@ html(lang="en")
 
   body
     main.container
-      h1 Posts
+      .navbar(style="display: flex; justify-content: space-between")
+        h1 Posts
+        .dynamic-content(id="post-count")
+          p(hx-swap-oob="true" id="post-count", style="font-size: 3rem") #{posts.length}
+
       form.grid(hx-post="/posts" hx-target="#posts-results", enctype="multipart/form-data", hx-swap="innerHTML")
         input(type="text", name="post")
         button(type="submit") Submit
