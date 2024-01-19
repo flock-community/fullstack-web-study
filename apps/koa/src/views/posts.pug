@@ -2,7 +2,7 @@ if swap
   p.display-2(hx-swap-oob="true" id="post-count") #{posts.length}
 
 each post in posts
-  article.flex.column
+  article.flex.column(id= post.id)
     header
       div.flex.gap-1.align-center
         if post.likes
@@ -12,14 +12,14 @@ each post in posts
         .icons
           include icons/like-solid
 
-    p.display-3(hx-target="this", hx-swap="outerHTML")= post.message
+    p.display-3()= post.message
     footer
       .flex.row.align-center.gap-2.fill-content
         button.outline.primary.fill-content(type="button", hx-post="/likes/" + post.id, hx-target="#posts-results" data-tooltip="Like this!")
           .icons
             include icons/like
 
-        button.outline.primary.fill-content(type="button", hx-get="/posts/" + post.id + "/edit", hx-target="#posts-results" data-tooltip="Edit post")
+        button.outline.primary.fill-content(type="button", hx-get="/posts/" + post.id + "/edit", hx-target="#" + post.id data-tooltip="Edit post", hx-swap="outerHTML")
           .icons
             include icons/edit
 

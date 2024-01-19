@@ -1,5 +1,5 @@
 import Router from "@koa/router";
-import { createPost, deletePost, getPosts, likePost, getPostById, updatePost } from "js-app-db";
+import { createPost, deletePost, getPostById, getPosts, likePost, updatePost } from "js-app-db";
 import Koa from "koa";
 import type { KoaBodyMiddlewareOptions } from "koa-body";
 import { koaBody } from "koa-body";
@@ -38,7 +38,8 @@ const update = async ({ request, render, redirect }: any) => {
   const { id } = request.params;
   const { message } = request.body;
   updatePost(id, message);
-  await render("posts", { posts: await getPosts() });
+
+  await render("posts", { posts: [await getPostById(id)] });
 };
 
 const remove = async ({ request, render }: any) => {

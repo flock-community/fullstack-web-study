@@ -1,5 +1,6 @@
-form(hx-put="/posts/" + post.id, hx-target="this", hx-swap="outerHTML")
-  div
-    label message
-    input(type="text", name="message", value=post.message)
-    button.primary Send
+article.flex.column(id= post.id, hx-target="this", hx-swap="outerHTML")
+  form(hx-put="/posts/" + post.id)
+    div
+      label Message
+      input(type="text", name="message", value=post.message)
+      button.primary Send
