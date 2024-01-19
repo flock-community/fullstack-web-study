@@ -1,8 +1,21 @@
 :root {
+  --secondary: red;
+}
+
+[data-theme="dark"] {
+  --secondary: red;
 }
 
 .flex {
   display: flex;
+}
+
+.gap-1 {
+  gap: 1em;
+}
+
+.gap-2 {
+  gap: 2em;
 }
 
 .row {
@@ -15,4 +28,34 @@
 
 .content-between {
   justify-content: space-between;
+}
+
+.content-right {
+  justify-content: right;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.display-1 {
+  font-size: 1em;
+}
+
+.display-2 {
+  font-size: 3em;
+}
+
+.display-3 {
+  font-size: 4em;
+}
+
+.icons {
+  --size: 40px;
+  height: var(--size);
+  width: var(--size);
+}
+
+.fill-content {
+  max-width: fit-content;
 }
