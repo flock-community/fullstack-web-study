@@ -14,7 +14,7 @@ html(lang="en")
       .navbar(style="display: flex; justify-content: space-between")
         h1 Posts
         .dynamic-content(id="post-count")
-          p.display-2(hx-swap-oob="true" id="post-count") #{posts.length}
+          include post-amount
 
       form.grid(hx-post="/posts" hx-target="#posts-results", enctype="multipart/form-data", hx-swap="innerHTML")
         input(type="text", name="post")
