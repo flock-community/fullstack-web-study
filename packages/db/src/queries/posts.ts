@@ -12,6 +12,19 @@ export async function getPosts() {
   return list;
 }
 
+export async function getPostById(id: string): Promise<Post | undefined> {
+  // Artificial delay to simulate network latency
+  await new Promise((resolve) => setTimeout(resolve, timeout));
+  return list.find((it) => it.id === id);
+}
+
+export async function updatePost(id: string, message: string) {
+  const post = list.find((it) => it.id === id);
+  if (!post) throw Error("not found");
+
+  post.message = message;
+}
+
 export async function createPost(post: Omit<Post, "id" | "likes">) {
   list.push({ ...post, id: uuid(), likes: 0 });
   await db.write();
