@@ -25,6 +25,12 @@ export async function updatePost(id: string, message: string) {
   post.message = message;
 }
 
+export async function getPostAggregate() {
+  // Artificial delay to simulate network latency
+  await new Promise((resolve) => setTimeout(resolve, timeout));
+  return { count: list.length };
+}
+
 export async function createPost(post: Omit<Post, "id" | "likes">) {
   list.push({ ...post, id: uuid(), likes: 0 });
   await db.write();

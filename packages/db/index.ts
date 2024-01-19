@@ -2,6 +2,7 @@ export { db } from "./db.js";
 export {
   createPost,
   getPosts,
+  getPostAggregate,
   deletePost,
   likePost,
   getPostById,
