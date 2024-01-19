@@ -4,17 +4,25 @@ if swap
 each post in posts
   article.flex.column
     header
-      .grid
-        div
-          span Likes
-          if post.likes
-            span= post.likes
-          else
-            span= 0
-        button(type="button", hx-post="/likes/" + post.id, hx-target="#posts-results") Like me
-        button(type="button", hx-delete="/posts/" + post.id, hx-target="#posts-results") Delete me
+      div.flex.gap-1.align-center
+        if post.likes
+          span.display-2= post.likes
+        else
+          span.display-2= 0
+        .icons
+          include icons/like-solid
 
-    p= post.message
-    footer Some footer
-  //- else
-  //-   li database is currently empty
+    p.display-3(hx-target="this", hx-swap="outerHTML")= post.message
+    footer
+      .flex.row.align-center.gap-2.fill-content
+        button.outline.primary.fill-content(type="button", hx-post="/likes/" + post.id, hx-target="#posts-results" data-tooltip="Like this!")
+          .icons
+            include icons/like
+
+        button.outline.primary.fill-content(type="button", hx-get="/posts/" + post.id + "/edit", hx-target="#posts-results" data-tooltip="Edit post")
+          .icons
+            include icons/edit
+
+        button.outline.secondary.fill-content(type="button", hx-delete="/posts/" + post.id, hx-target="#posts-results" data-tooltip="Delete this post!")
+          .icons
+            include icons/delete
