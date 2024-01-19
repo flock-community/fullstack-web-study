@@ -10,6 +10,8 @@
   "scripts": {
     "build": "tsc",
     "dev": "NODE_OPTIONS=\"--loader ts-node/esm\" nodemon -w src/ --ext ts,pug --exec ts-node src/index.ts",
+    "format": "npm run format:prettier",
+    "format:prettier": "prettier --write . --ignore-path .gitignore",
     "start": "node src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
