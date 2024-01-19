@@ -1,0 +1,5 @@
+form(hx-put="/posts/" + post.id, hx-target="this", hx-swap="outerHTML")
+  div
+    label message
+    input(type="text", name="message", value=post.message)
+    button.primary Send
