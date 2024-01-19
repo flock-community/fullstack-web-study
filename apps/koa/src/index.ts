@@ -1,5 +1,5 @@
 import Router from "@koa/router";
-import { createPost, deletePost, getPosts, likePost } from "js-app-db";
+import { createPost, deletePost, getPosts, likePost, getPostById, updatePost } from "js-app-db";
 import Koa from "koa";
 import type { KoaBodyMiddlewareOptions } from "koa-body";
 import { koaBody } from "koa-body";
@@ -28,6 +28,19 @@ const create = async ({ body, request, response, render }: any) => {
   await render("posts", { posts: await getPosts(), swap: true });
 };
 
+const edit = async ({ request, render }: any) => {
+  const { id } = request.params;
+
+  await render("post", { post: await getPostById(id) });
+};
+
+const update = async ({ request, render, redirect }: any) => {
+  const { id } = request.params;
+  const { message } = request.body;
+  updatePost(id, message);
+  await render("posts", { posts: await getPosts() });
+};
+
 const remove = async ({ request, render }: any) => {
   const id: string = request.params.id;
   await deletePost(id);
@@ -36,7 +49,6 @@ const remove = async ({ request, render }: any) => {
 
 const createLike = async ({ request, render }: any) => {
   const postId: string = request.params.postId;
-  console.log(postId);
   await likePost(postId);
   await render("posts", { posts: await getPosts() });
 };
@@ -45,6 +57,8 @@ router
   .get("/", root)
   .get("/posts", list)
   .post("/posts", create)
+  .get("/posts/:id/edit", edit)
+  .put("/posts/:id", update)
   .delete("/posts/:id", remove)
   .post("/likes/:postId", createLike);
 app.use(koaBody(parserOpts)).use(render).use(router.routes());
