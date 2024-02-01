@@ -7,11 +7,11 @@ html(lang="en")
     style
       include ../styles/style.css
       include ../../public/pico.min.css
-    script( src="https://unpkg.com/htmx.org@1.9.8" integrity="sha384-rgjA7mptc2ETQqXoYC3/zJvkU7K/aP44Y+z7xQuJiVnB/422P/Ak+F/AqFR7E4Wr" crossorigin="anonymous")
+    script(src="https://unpkg.com/htmx.org@1.9.8" integrity="sha384-rgjA7mptc2ETQqXoYC3/zJvkU7K/aP44Y+z7xQuJiVnB/422P/Ak+F/AqFR7E4Wr" crossorigin="anonymous")
 
   body
     main.container
-      .navbar(style="display: flex; justify-content: space-between")
+      .navbar.flex.content-between
         h1 Posts
         .dynamic-content(id="post-count")
           include post-amount
